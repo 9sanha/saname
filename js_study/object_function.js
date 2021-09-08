@@ -22,3 +22,10 @@ function sum(prefix){
 console.log('sum.call(kim)->',sum.call(kim,'prefix'));
 console.log('sum.call(lee)->',sum.call(lee,'prefix'));
 
+//this 고정 sum에는 영향을 안주죠
+var kimSum = sum.bind(kim,'->')
+console.log('kimSum():',kimSum());
+
+//call과 bind의 차이
+// call은 내가 실행하고자 하는 함수의 this의 값을 바꿔줌
+//bindㅇ-는 this의 값을 영구적으로 바꾼 새로운 함수를 만들어주는거져
